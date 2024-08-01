@@ -11,8 +11,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative; /* Añadido: Necesario para ::before */
 }
-
 
 body::before {
     background-image: url("img/code.png");
@@ -39,7 +39,6 @@ body::before {
     background-size: 100% 100%;
     position: relative;
 }
-
 
 .container__contenido {
     display: flex;
@@ -108,4 +107,111 @@ button {
 .texto__parrafo {
     font-size: 32px;
     font-weight: 400;
+}
+
+/* Media Queries para dispositivos móviles */
+@media (max-width: 1200px) {
+    /* Ajuste para pantallas más pequeñas que 1200px */
+    .container {
+        width: 100%; /* Cambiado: Ajuste de ancho a 100% */
+        height: auto; /* Cambiado: Altura automática */
+        flex-direction: column; /* Cambiado: Dirección del flex a columna */
+        padding: 1rem; /* Añadido: Padding interno */
+    }
+
+    .container__contenido {
+        position: static; /* Cambiado: Posición estática */
+        flex-direction: column; /* Cambiado: Dirección del flex a columna */
+        align-items: center; /* Cambiado: Alinear al centro */
+        text-align: center; /* Cambiado: Texto centrado */
+        width: 100%; /* Cambiado: Ancho a 100% */
+    }
+
+    .container__informaciones {
+        padding: 1rem; /* Cambiado: Padding reducido */
+    }
+
+    h1 {
+        font-size: 48px; /* Cambiado: Tamaño de fuente reducido */
+        padding-bottom: 1.5rem; /* Cambiado: Padding inferior reducido */
+    }
+
+    .texto__parrafo {
+        font-size: 24px; /* Cambiado: Tamaño de fuente reducido */
+    }
+
+    .container__input {
+        height: 56px; /* Cambiado: Altura reducida */
+        font-size: 18px; /* Cambiado: Tamaño de fuente reducido */
+        padding: 1rem; /* Cambiado: Padding reducido */
+    }
+
+    .container__boton {
+        padding: 12px 16px; /* Cambiado: Padding reducido */
+        font-size: 18px; /* Cambiado: Tamaño de fuente reducido */
+    }
+
+    .container__botones {
+        gap: 1em; /* Cambiado: Reducción del espacio entre botones */
+    }
+}
+
+@media (max-width: 768px) {
+    /* Ajuste para pantallas más pequeñas que 768px */
+    h1 {
+        font-size: 36px; /* Cambiado: Tamaño de fuente más pequeño */
+    }
+
+    .texto__parrafo {
+        font-size: 20px; /* Cambiado: Tamaño de fuente más pequeño */
+    }
+
+    .container__input {
+        height: 48px; /* Cambiado: Altura más pequeña */
+        font-size: 16px; /* Cambiado: Tamaño de fuente más pequeño */
+        padding: 0.5rem; /* Cambiado: Padding más pequeño */
+    }
+
+    .container__boton {
+        padding: 10px 12px; /* Cambiado: Padding más pequeño */
+        font-size: 16px; /* Cambiado: Tamaño de fuente más pequeño */
+    }
+}
+
+@media (max-width: 480px) {
+    /* Ajuste para pantallas más pequeñas que 480px */
+    .container {
+        width: 100%; /* Cambiado: Ajuste de ancho a 100% */
+        height: auto; /* Cambiado: Altura automática */
+        padding: 0.5rem; /* Cambiado: Padding interno reducido */
+    }
+
+    .container__informaciones {
+        padding: 0.5rem; /* Cambiado: Padding reducido */
+    }
+
+    h1 {
+        font-size: 24px; /* Cambiado: Tamaño de fuente más pequeño */
+        padding-bottom: 1rem; /* Cambiado: Padding inferior reducido */
+    }
+
+    .texto__parrafo {
+        font-size: 16px; /* Cambiado: Tamaño de fuente más pequeño */
+    }
+
+    .container__input {
+        height: 40px; /* Cambiado: Altura más pequeña */
+        font-size: 14px; /* Cambiado: Tamaño de fuente más pequeño */
+        padding: 0.5rem; /* Cambiado: Padding más pequeño */
+    }
+
+    .container__boton {
+        padding: 8px 10px; /* Cambiado: Padding más pequeño */
+        font-size: 14px; /* Cambiado: Tamaño de fuente más pequeño */
+    }
+
+    .container__botones {
+        flex-direction: column; /* Cambiado: Dirección del flex a columna */
+        gap: 0.5em; /* Cambiado: Reducción del espacio entre botones */
+    }
 }
